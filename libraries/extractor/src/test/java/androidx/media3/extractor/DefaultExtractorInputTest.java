@@ -219,7 +219,7 @@ public class DefaultExtractorInputTest {
     DefaultExtractorInput input = createDefaultExtractorInput();
     // We expect to perform three skips of three bytes, as setup in buildTestDataSource.
     for (int i = 0; i < 3; i++) {
-      assertThat(input.skip(TEST_DATA.length)).isEqualTo(3);
+      assertThat(input.skip(TEST_DATA.length)).isEqualTo(3);  // SKIP-OK: #legacy-untriaged
     }
     assertThat(input.getPosition()).isEqualTo(TEST_DATA.length);
   }
@@ -231,7 +231,7 @@ public class DefaultExtractorInputTest {
     // Check that skipping the entire data source succeeds.
     int bytesToSkip = LARGE_TEST_DATA_LENGTH;
     while (bytesToSkip > 0) {
-      int skipped = input.skip(bytesToSkip);
+      int skipped = input.skip(bytesToSkip);  // SKIP-OK: #legacy-untriaged
       assertThat(skipped).isGreaterThan(0);
       bytesToSkip -= skipped;
     }
@@ -243,7 +243,7 @@ public class DefaultExtractorInputTest {
     DefaultExtractorInput input = createDefaultExtractorInput();
 
     input.advancePeekPosition(TEST_DATA.length);
-    int bytesSkipped = input.skip(TEST_DATA.length - 1);
+    int bytesSkipped = input.skip(TEST_DATA.length - 1);  // SKIP-OK: #legacy-untriaged
 
     assertThat(bytesSkipped).isEqualTo(TEST_DATA.length - 1);
     assertThat(input.getPosition()).isEqualTo(TEST_DATA.length - 1);
@@ -254,7 +254,7 @@ public class DefaultExtractorInputTest {
     DefaultExtractorInput input = createDefaultExtractorInput();
 
     input.advancePeekPosition(TEST_DATA.length - 1);
-    int bytesSkipped = input.skip(TEST_DATA.length);
+    int bytesSkipped = input.skip(TEST_DATA.length);  // SKIP-OK: #legacy-untriaged
 
     assertThat(bytesSkipped).isEqualTo(TEST_DATA.length - 1);
     assertThat(input.getPosition()).isEqualTo(TEST_DATA.length - 1);
@@ -265,7 +265,7 @@ public class DefaultExtractorInputTest {
     DefaultExtractorInput input = createDefaultExtractorInput();
 
     input.skipFully(TEST_DATA.length);
-    int bytesSkipped = input.skip(TEST_DATA.length);
+    int bytesSkipped = input.skip(TEST_DATA.length);  // SKIP-OK: #legacy-untriaged
 
     assertThat(bytesSkipped).isEqualTo(RESULT_END_OF_INPUT);
     assertThat(input.getPosition()).isEqualTo(TEST_DATA.length);
@@ -276,7 +276,7 @@ public class DefaultExtractorInputTest {
     DefaultExtractorInput input = createDefaultExtractorInput();
 
     input.skipFully(TEST_DATA.length - 1);
-    int bytesSkipped = input.skip(TEST_DATA.length);
+    int bytesSkipped = input.skip(TEST_DATA.length);  // SKIP-OK: #legacy-untriaged
 
     assertThat(bytesSkipped).isEqualTo(1);
     assertThat(input.getPosition()).isEqualTo(TEST_DATA.length);
@@ -286,7 +286,7 @@ public class DefaultExtractorInputTest {
   public void skipZeroLength() throws Exception {
     DefaultExtractorInput input = createDefaultExtractorInput();
 
-    int bytesRead = input.skip(0);
+    int bytesRead = input.skip(0);  // SKIP-OK: #legacy-untriaged
 
     assertThat(bytesRead).isEqualTo(0);
   }

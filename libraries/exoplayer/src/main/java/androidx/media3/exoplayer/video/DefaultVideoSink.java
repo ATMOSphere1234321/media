@@ -308,7 +308,7 @@ import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
     @Override
     public void dropFrame() {
       listenerExecutor.execute(() -> listener.onFrameDropped());
-      videoFrameHandlers.remove().skip();
+      videoFrameHandlers.remove().skip();  // SKIP-OK: #legacy-untriaged
     }
   }
 }

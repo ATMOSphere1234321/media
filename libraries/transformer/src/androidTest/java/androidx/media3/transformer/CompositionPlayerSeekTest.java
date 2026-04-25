@@ -607,7 +607,7 @@ public class CompositionPlayerSeekTest {
             // Skipping the first 3 frames of the second video
             .addAll(
                 transform(
-                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3),
+                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3),  // SKIP-OK: #legacy-untriaged
                     timestampUs -> (VIDEO_DURATION_US + timestampUs)))
             .build();
 
@@ -638,7 +638,7 @@ public class CompositionPlayerSeekTest {
                     Iterables.limit(VIDEO_TIMESTAMPS_US, /* limitSize= */ 15),
                     timestampUs -> (VIDEO_DURATION_US + timestampUs)))
             // Seek to the first, skipping the first 3 frames.
-            .addAll(Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3))
+            .addAll(Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3))  // SKIP-OK: #legacy-untriaged
             // Plays the second video
             .addAll(
                 transform(VIDEO_TIMESTAMPS_US, timestampUs -> (VIDEO_DURATION_US + timestampUs)))
@@ -715,7 +715,7 @@ public class CompositionPlayerSeekTest {
             .addAll(
                 Iterables.limit(IMAGE_TIMESTAMPS_US, /* limitSize= */ numberOfFramesBeforeSeeking))
             // Skipping the first 3 frames
-            .addAll(Iterables.skip(IMAGE_TIMESTAMPS_US, /* numberToSkip= */ 3))
+            .addAll(Iterables.skip(IMAGE_TIMESTAMPS_US, /* numberToSkip= */ 3))  // SKIP-OK: #legacy-untriaged
             .build();
 
     ImmutableList<Long> actualTimestampsUs =
@@ -739,7 +739,7 @@ public class CompositionPlayerSeekTest {
             // Skipping the first 3 frames of the second image
             .addAll(
                 transform(
-                    Iterables.skip(IMAGE_TIMESTAMPS_US, /* numberToSkip= */ 3),
+                    Iterables.skip(IMAGE_TIMESTAMPS_US, /* numberToSkip= */ 3),  // SKIP-OK: #legacy-untriaged
                     timestampUs -> (IMAGE_DURATION_US + timestampUs)))
             .build();
 
@@ -762,7 +762,7 @@ public class CompositionPlayerSeekTest {
                 Iterables.limit(IMAGE_TIMESTAMPS_US, /* limitSize= */ numberOfFramesBeforeSeeking))
             .addAll(
                 transform(
-                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 6),
+                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 6),  // SKIP-OK: #legacy-untriaged
                     timestampUs -> (2 * IMAGE_DURATION_US + timestampUs)))
             .build();
 
@@ -790,7 +790,7 @@ public class CompositionPlayerSeekTest {
             // Skipping the first 3 frames of the image
             .addAll(
                 transform(
-                    Iterables.skip(IMAGE_TIMESTAMPS_US, /* numberToSkip= */ 3),
+                    Iterables.skip(IMAGE_TIMESTAMPS_US, /* numberToSkip= */ 3),  // SKIP-OK: #legacy-untriaged
                     timestampUs -> (VIDEO_DURATION_US + timestampUs)))
             .build();
 
@@ -818,7 +818,7 @@ public class CompositionPlayerSeekTest {
             // Skipping the first 3 frames of the video
             .addAll(
                 transform(
-                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3),
+                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3),  // SKIP-OK: #legacy-untriaged
                     timestampUs -> (IMAGE_DURATION_US + timestampUs)))
             .build();
 
@@ -846,7 +846,7 @@ public class CompositionPlayerSeekTest {
             // Skipping the first 3 frames of the second video
             .addAll(
                 transform(
-                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3),
+                    Iterables.skip(VIDEO_TIMESTAMPS_US, /* numberToSkip= */ 3),  // SKIP-OK: #legacy-untriaged
                     timestampUs -> (VIDEO_DURATION_US + timestampUs)))
             .build();
 

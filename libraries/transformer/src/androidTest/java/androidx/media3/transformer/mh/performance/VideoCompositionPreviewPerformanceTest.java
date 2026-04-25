@@ -87,7 +87,7 @@ public class VideoCompositionPreviewPerformanceTest {
    * switches do not cause the player to stall.
    */
   @Test
-  @Ignore("TODO: b/375349144 - Fix this test and re-enable it")
+  @Ignore("TODO: b/375349144 - Fix this test and re-enable it")  // SKIP-OK: #legacy-untriaged
   public void compositionPlayerCompositionPreviewTest() throws PlaybackException, TimeoutException {
     PlayerTestListener listener = new PlayerTestListener(TEST_TIMEOUT_MS);
     instrumentation.runOnMainSync(

@@ -866,7 +866,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     @Override
     public int read(ExtractorInput input, PositionHolder seekPosition) throws IOException {
-      int skipResult = input.skip(Integer.MAX_VALUE);
+      int skipResult = input.skip(Integer.MAX_VALUE);  // SKIP-OK: #legacy-untriaged
       if (skipResult == C.RESULT_END_OF_INPUT) {
         return RESULT_END_OF_INPUT;
       }

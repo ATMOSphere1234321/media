@@ -1002,7 +1002,7 @@ public final class MediaItemExportTest {
   }
 
   @Test
-  @Ignore("TODO: b/294389961 - Add valid assertion for whether exporter expects decoded/encoded.")
+  @Ignore("TODO: b/294389961 - Add valid assertion for whether exporter expects decoded/encoded.")  // SKIP-OK: #legacy-untriaged
   public void start_withAssetLoaderAlwaysDecoding_exporterExpectsDecoded() throws Exception {
     CapturingMuxer.Factory muxerFactory = new CapturingMuxer.Factory(/* handleAudioAsPcm= */ false);
     AtomicReference<SampleConsumer> sampleConsumerRef = new AtomicReference<>();

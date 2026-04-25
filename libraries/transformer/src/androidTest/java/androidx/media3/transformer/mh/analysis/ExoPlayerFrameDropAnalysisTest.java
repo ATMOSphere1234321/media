@@ -55,7 +55,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 /** Instrumentation tests for analyzing {@link ExoPlayer} frame dropping behavior. */
 @RunWith(Parameterized.class)
-@Ignore("Analysis tests do not verify correctness take a long time to run.")
+@Ignore("Analysis tests do not verify correctness take a long time to run.")  // SKIP-OK: #legacy-untriaged
 public class ExoPlayerFrameDropAnalysisTest {
   private static final ImmutableSet<String> INPUT_ASSETS =
       ImmutableSet.of(

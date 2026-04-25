@@ -266,7 +266,7 @@ public final class DefaultVideoFrameProcessorTextureOutputPixelTest {
   }
 
   @Test
-  @Ignore("TODO: b/344529901 - Enable this test when fixed.")
+  @Ignore("TODO: b/344529901 - Enable this test when fixed.")  // SKIP-OK: #legacy-untriaged
   public void ultraHdrBitmapAndTextOverlay_hlg10Input_matchesGoldenFile() throws Exception {
     Context context = getApplicationContext();
     Format format = MP4_ASSET_1080P_5_SECOND_HLG10.videoFormat;

@@ -413,7 +413,7 @@ public final class DefaultBandwidthMeterTest {
     assertThat(initialEstimateFast).isGreaterThan(initialEstimateSlow);
   }
 
-  @Ignore // 5G-SA isn't widespread enough yet to define a slow and fast country for testing.
+  @Ignore // 5G-SA isn't widespread enough yet to define a slow and fast country for testing.  // SKIP-OK: #legacy-untriaged
   @Test
   @Config(minSdk = 29) // 5G-SA detection support was added in API 29.
   public void

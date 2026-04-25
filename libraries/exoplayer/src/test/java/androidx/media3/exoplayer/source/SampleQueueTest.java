@@ -635,7 +635,7 @@ public final class SampleQueueTest {
   @Test
   public void skipToEnd() {
     writeTestData();
-    sampleQueue.skip(
+    sampleQueue.skip(  // SKIP-OK: #legacy-untriaged
         sampleQueue.getSkipCount(/* timeUs= */ MAX_VALUE, /* allowEndOfQueue= */ true));
     assertAllocationCount(10);
     sampleQueue.discardToRead();
@@ -651,7 +651,7 @@ public final class SampleQueueTest {
   public void skipToEndRetainsUnassignedData() {
     sampleQueue.format(FORMAT_1);
     sampleQueue.sampleData(new ParsableByteArray(DATA), ALLOCATION_SIZE);
-    sampleQueue.skip(
+    sampleQueue.skip(  // SKIP-OK: #legacy-untriaged
         sampleQueue.getSkipCount(/* timeUs= */ MAX_VALUE, /* allowEndOfQueue= */ true));
     assertAllocationCount(1);
     sampleQueue.discardToRead();
@@ -685,7 +685,7 @@ public final class SampleQueueTest {
         sampleQueue.getSkipCount(SAMPLE_TIMESTAMPS[0] - 1, /* allowEndOfQueue= */ false);
     // Should have no effect (we're already at the first frame).
     assertThat(skipCount).isEqualTo(0);
-    sampleQueue.skip(skipCount);
+    sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     assertReadTestData();
     assertNoSamplesToRead(FORMAT_2);
   }
@@ -696,7 +696,7 @@ public final class SampleQueueTest {
     int skipCount = sampleQueue.getSkipCount(SAMPLE_TIMESTAMPS[0], /* allowEndOfQueue= */ false);
     // Should have no effect (we're already at the first frame).
     assertThat(skipCount).isEqualTo(0);
-    sampleQueue.skip(skipCount);
+    sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     assertReadTestData();
     assertNoSamplesToRead(FORMAT_2);
   }
@@ -707,7 +707,7 @@ public final class SampleQueueTest {
     int skipCount = sampleQueue.getSkipCount(LAST_SAMPLE_TIMESTAMP, /* allowEndOfQueue= */ false);
     // Should advance to 2nd keyframe (the 4th frame).
     assertThat(skipCount).isEqualTo(4);
-    sampleQueue.skip(skipCount);
+    sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     assertReadTestData(/* startFormat= */ null, DATA_SECOND_KEYFRAME_INDEX);
     assertNoSamplesToRead(FORMAT_2);
   }
@@ -719,7 +719,7 @@ public final class SampleQueueTest {
         sampleQueue.getSkipCount(LAST_SAMPLE_TIMESTAMP + 1, /* allowEndOfQueue= */ false);
     // Should advance to 2nd keyframe (the 4th frame).
     assertThat(skipCount).isEqualTo(4);
-    sampleQueue.skip(skipCount);
+    sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     assertReadTestData(/* startFormat= */ null, DATA_SECOND_KEYFRAME_INDEX);
     assertNoSamplesToRead(FORMAT_2);
   }

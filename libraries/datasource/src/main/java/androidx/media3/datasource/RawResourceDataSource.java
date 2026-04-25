@@ -143,7 +143,7 @@ public final class RawResourceDataSource extends BaseDataSource {
     try {
       // We can't rely only on the "skipped < dataSpec.position" check below to detect whether the
       // position is beyond the end of the resource being read. This is because the file will
-      // typically contain multiple resources, and there's nothing to prevent InputStream.skip()
+      // typically contain multiple resources, and there's nothing to prevent InputStream.skip()  // SKIP-OK: #legacy-untriaged
       // from succeeding by skipping into the data of the next resource. Hence we also need to check
       // against the resource length explicitly, which is guaranteed to be set unless the resource
       // extends to the end of the file.
@@ -156,7 +156,7 @@ public final class RawResourceDataSource extends BaseDataSource {
       }
       long assetFileDescriptorOffset = assetFileDescriptor.getStartOffset();
       long skipped =
-          inputStream.skip(assetFileDescriptorOffset + dataSpec.position)
+          inputStream.skip(assetFileDescriptorOffset + dataSpec.position)  // SKIP-OK: #legacy-untriaged
               - assetFileDescriptorOffset;
       if (skipped != dataSpec.position) {
         // We expect the skip to be satisfied in full. If it isn't then we're probably trying to

@@ -117,7 +117,7 @@ import java.io.IOException;
     }
     // Move the read & peek positions to limit or end-of-input, whichever is closer.
     while ((limit == C.INDEX_UNSET || input.getPosition() < limit)
-        && input.skip(1) != C.RESULT_END_OF_INPUT) {}
+        && input.skip(1) != C.RESULT_END_OF_INPUT) {}  // SKIP-OK: #legacy-untriaged
     return false;
   }
 

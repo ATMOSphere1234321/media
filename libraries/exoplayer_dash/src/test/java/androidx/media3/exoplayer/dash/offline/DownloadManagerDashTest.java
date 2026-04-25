@@ -107,7 +107,7 @@ public class DownloadManagerDashTest {
     testThread.release();
   }
 
-  @Ignore("Disabled due to flakiness")
+  @Ignore("Disabled due to flakiness")  // SKIP-OK: #legacy-untriaged
   @Test
   public void saveAndLoadActionFile() throws Throwable {
     // Configure fakeDataSet to block until interrupted when TEST_MPD is read.

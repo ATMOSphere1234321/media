@@ -46,7 +46,7 @@ public class ForwardingExtractorInput implements ExtractorInput {
 
   @Override
   public int skip(int length) throws IOException {
-    return input.skip(length);
+    return input.skip(length);  // SKIP-OK: #legacy-untriaged
   }
 
   @Override

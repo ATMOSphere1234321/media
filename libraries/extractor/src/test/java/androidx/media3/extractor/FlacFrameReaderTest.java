@@ -129,7 +129,7 @@ public class FlacFrameReaderTest {
             "media/flac/bear_one_metadata_block.flac", streamMetadataHolder);
     int frameStartMarker = FlacMetadataReader.getFrameStartMarker(input);
     // Skip first frame.
-    input.skip(5030);
+    input.skip(5030);  // SKIP-OK: #legacy-untriaged
     ParsableByteArray scratch = new ParsableByteArray(FlacConstants.MAX_FRAME_HEADER_SIZE);
     input.read(scratch.getData(), 0, FlacConstants.MAX_FRAME_HEADER_SIZE);
     SampleNumberHolder sampleNumberHolder = new SampleNumberHolder();
@@ -360,7 +360,7 @@ public class FlacFrameReaderTest {
             "media/flac/bear_one_metadata_block.flac", streamMetadataHolder);
     int frameStartMarker = FlacMetadataReader.getFrameStartMarker(input);
     // Skip first frame.
-    input.skip(5030);
+    input.skip(5030);  // SKIP-OK: #legacy-untriaged
     SampleNumberHolder sampleNumberHolder = new SampleNumberHolder();
 
     FlacFrameReader.checkFrameHeaderFromPeek(
@@ -436,7 +436,7 @@ public class FlacFrameReaderTest {
         buildExtractorInputReadingFromFirstFrame(
             "media/flac/bear_one_metadata_block.flac", streamMetadataHolder);
     // Skip first frame.
-    input.skip(5030);
+    input.skip(5030);  // SKIP-OK: #legacy-untriaged
 
     long result =
         FlacFrameReader.getFirstSampleNumber(input, streamMetadataHolder.flacStreamMetadata);

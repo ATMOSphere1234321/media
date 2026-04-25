@@ -77,7 +77,7 @@ import org.junit.runners.Parameterized.Parameters;
  * <p>SSIM increases monotonically with bitrate.
  */
 @RunWith(Parameterized.class)
-@Ignore(
+@Ignore(  // SKIP-OK: #legacy-untriaged
     "Analysis tests are not used for confirming Transformer is running properly, and not configured"
         + " for this use as they're missing skip checks for unsupported devices.")
 public class SsimMapperTest {

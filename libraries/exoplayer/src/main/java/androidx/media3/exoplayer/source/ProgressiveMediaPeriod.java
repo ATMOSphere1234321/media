@@ -563,7 +563,7 @@ import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
     maybeNotifyDownstreamFormat(track);
     SampleQueue sampleQueue = sampleQueues[track];
     int skipCount = sampleQueue.getSkipCount(positionUs, loadingFinished);
-    sampleQueue.skip(skipCount);
+    sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     if (skipCount == 0) {
       maybeStartDeferredRetry(track);
     }

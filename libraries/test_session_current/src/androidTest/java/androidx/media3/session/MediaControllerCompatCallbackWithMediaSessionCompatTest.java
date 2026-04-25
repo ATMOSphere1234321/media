@@ -86,7 +86,7 @@ public class MediaControllerCompatCallbackWithMediaSessionCompatTest {
 
   /** Custom actions in the legacy session used for instance by Android Auto and Wear OS. */
   @Test
-  @Ignore("Flaky, see b/235057692")
+  @Ignore("Flaky, see b/235057692")  // SKIP-OK: #legacy-untriaged
   public void setPlaybackState_withCustomActions_onPlaybackStateCompatChangedCalled()
       throws Exception {
     MediaSessionCompat.Token sessionToken = session.getSessionToken();

@@ -101,7 +101,7 @@ public final class DashWidevineOfflineTest {
   // Offline license tests
 
   @Test
-  @Ignore(
+  @Ignore(  // SKIP-OK: #legacy-untriaged
       "Needs to be reconfigured/rewritten with an offline-compatible licence [internal"
           + " b/176960595].")
   public void widevineOfflineLicenseV22() throws Exception {
@@ -116,7 +116,7 @@ public final class DashWidevineOfflineTest {
   }
 
   @Test
-  @Ignore(
+  @Ignore(  // SKIP-OK: #legacy-untriaged
       "Needs to be reconfigured/rewritten with an offline-compatible licence [internal"
           + " b/176960595].")
   public void widevineOfflineReleasedLicenseV22() throws Throwable {
@@ -141,7 +141,7 @@ public final class DashWidevineOfflineTest {
   }
 
   @Test
-  @Ignore(
+  @Ignore(  // SKIP-OK: #legacy-untriaged
       "Needs to be reconfigured/rewritten with an offline-compatible licence [internal"
           + " b/176960595].")
   public void widevineOfflineReleasedLicenseV29() throws Throwable {
@@ -166,7 +166,7 @@ public final class DashWidevineOfflineTest {
   }
 
   @Test
-  @Ignore(
+  @Ignore(  // SKIP-OK: #legacy-untriaged
       "Needs to be reconfigured/rewritten with an offline-compatible licence [internal"
           + " b/176960595].")
   public void widevineOfflineExpiredLicenseV22() throws Exception {
@@ -198,7 +198,7 @@ public final class DashWidevineOfflineTest {
   }
 
   @Test
-  @Ignore(
+  @Ignore(  // SKIP-OK: #legacy-untriaged
       "Needs to be reconfigured/rewritten with an offline-compatible licence [internal"
           + " b/176960595].")
   public void widevineOfflineLicenseExpiresOnPauseV22() throws Exception {

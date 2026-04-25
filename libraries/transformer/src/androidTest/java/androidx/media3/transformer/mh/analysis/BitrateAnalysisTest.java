@@ -65,7 +65,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 /** Instrumentation tests for analysing output bitrate and quality for a given input bitrate. */
 @RunWith(Parameterized.class)
-@Ignore(
+@Ignore(  // SKIP-OK: #legacy-untriaged
     "Analysis tests are not used for confirming Transformer is running properly, and not configured"
         + " for this use as they're missing skip checks for unsupported devices.")
 public class BitrateAnalysisTest {

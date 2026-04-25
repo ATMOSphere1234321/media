@@ -37,7 +37,7 @@ import org.junit.runner.RunWith;
 
 /** Tests repeated transcoding operations (as a stress test and to help reproduce flakiness). */
 @RunWith(AndroidJUnit4.class)
-@Ignore(
+@Ignore(  // SKIP-OK: #legacy-untriaged
     "Analysis tests are not used for confirming Transformer is running properly, and not configured"
         + " for this use as they're missing skip checks for unsupported devices.")
 public final class RepeatedTranscodeTest {

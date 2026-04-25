@@ -212,7 +212,7 @@ public class SubtitleExtractor implements Extractor {
 
   /** Returns whether the input has been fully skipped. */
   private boolean skipInput(ExtractorInput input) throws IOException {
-    return input.skip(
+    return input.skip(  // SKIP-OK: #legacy-untriaged
             input.getLength() != C.LENGTH_UNSET
                 ? Ints.checkedCast(input.getLength())
                 : DEFAULT_BUFFER_SIZE)

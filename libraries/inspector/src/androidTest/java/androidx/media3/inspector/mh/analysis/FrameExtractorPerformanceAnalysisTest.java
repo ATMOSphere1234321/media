@@ -50,7 +50,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 /** Instrumentation tests for analyzing frame extractor performance. */
 @RunWith(Parameterized.class)
-@Ignore(
+@Ignore(  // SKIP-OK: #legacy-untriaged
     "Analysis tests are not used to verify correctness and miss checks for unsupported devices."
         + " Analysis tests take a long time to run - skip them by default when running all"
         + " tests from Android Studio.")

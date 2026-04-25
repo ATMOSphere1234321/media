@@ -302,7 +302,7 @@ import java.util.Objects;
   /** Skips the current skippable ad, if there is one. */
   public void skipAd() {
     if (adsManager != null) {
-      adsManager.skip();
+      adsManager.skip();  // SKIP-OK: #legacy-untriaged
     }
   }
 

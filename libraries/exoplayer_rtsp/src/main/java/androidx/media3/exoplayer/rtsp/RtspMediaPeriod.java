@@ -827,7 +827,7 @@ import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
 
     public int skipData(long positionUs) {
       int skipCount = sampleQueue.getSkipCount(positionUs, /* allowEndOfQueue= */ canceled);
-      sampleQueue.skip(skipCount);
+      sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
       return skipCount;
     }
 

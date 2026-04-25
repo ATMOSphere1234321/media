@@ -1031,7 +1031,7 @@ public final class MediaExtractorCompat {
     }
 
     public void discardFrontSample() {
-      sampleQueue.skip(/* count= */ 1);
+      sampleQueue.skip(/* count= */ 1);  // SKIP-OK: #legacy-untriaged
       sampleQueue.discardToRead();
     }
 

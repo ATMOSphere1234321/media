@@ -107,7 +107,7 @@ public final class ContentDataSource extends BaseDataSource {
 
       // We can't rely only on the "skipped < dataSpec.position" check below to detect whether the
       // position is beyond the end of the asset being read. This is because the file may contain
-      // multiple assets, and there's nothing to prevent InputStream.skip() from succeeding by
+      // multiple assets, and there's nothing to prevent InputStream.skip() from succeeding by  // SKIP-OK: #legacy-untriaged
       // skipping into the data of the next asset. Hence we also need to check against the asset
       // length explicitly, which is guaranteed to be set unless the asset extends to the end of the
       // file.
@@ -118,7 +118,7 @@ public final class ContentDataSource extends BaseDataSource {
       }
       long assetFileDescriptorOffset = assetFileDescriptor.getStartOffset();
       long skipped =
-          inputStream.skip(assetFileDescriptorOffset + dataSpec.position)
+          inputStream.skip(assetFileDescriptorOffset + dataSpec.position)  // SKIP-OK: #legacy-untriaged
               - assetFileDescriptorOffset;
       if (skipped != dataSpec.position) {
         // We expect the skip to be satisfied in full. If it isn't then we're probably trying to

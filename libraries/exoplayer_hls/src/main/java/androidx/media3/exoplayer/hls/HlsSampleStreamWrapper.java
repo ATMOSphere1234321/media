@@ -731,7 +731,7 @@ import org.checkerframework.checker.nullness.qual.RequiresNonNull;
       skipCount = min(skipCount, firstSampleIndex - readIndex);
     }
 
-    sampleQueue.skip(skipCount);
+    sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     return skipCount;
   }
 

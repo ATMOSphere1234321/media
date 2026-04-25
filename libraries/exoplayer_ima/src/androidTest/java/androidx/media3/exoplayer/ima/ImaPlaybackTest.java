@@ -122,7 +122,7 @@ public final class ImaPlaybackTest {
     testRule.getActivity().runTest(hostedTest, TIMEOUT_MS);
   }
 
-  @Ignore("The second ad doesn't preload so playback gets stuck. See [internal: b/155615925].")
+  @Ignore("The second ad doesn't preload so playback gets stuck. See [internal: b/155615925].")  // SKIP-OK: #legacy-untriaged
   @Test
   public void playbackWithMidrolls10And20WithSeekTo18_playsAdsAndContent() throws Exception {
     String adsResponse =

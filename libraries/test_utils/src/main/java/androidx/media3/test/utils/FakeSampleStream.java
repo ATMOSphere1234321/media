@@ -282,7 +282,7 @@ public class FakeSampleStream implements SampleStream {
   @Override
   public int skipData(long positionUs) {
     int skipCount = sampleQueue.getSkipCount(positionUs, loadingFinished);
-    sampleQueue.skip(skipCount);
+    sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     return skipCount;
   }
 

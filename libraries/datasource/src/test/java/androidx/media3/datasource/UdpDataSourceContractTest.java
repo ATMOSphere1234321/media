@@ -74,42 +74,42 @@ public class UdpDataSourceContractTest extends DataSourceContractTest {
   }
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithPosition_readUntilEnd() {}
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithLength_readExpectedRange() {}
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithLength_readUntilEndInTwoParts() {}
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithPositionAndLength_readExpectedRange() {}
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithPositionAtEnd_readsZeroBytes() {}
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithPositionAtEndAndLength_readsZeroBytes() {}
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithPositionOutOfRange_throwsPositionOutOfRangeException() {}
 
   @Test
-  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")
+  @Ignore("UdpDataSource doesn't support DataSpec's position or length [internal: b/175856954]")  // SKIP-OK: #legacy-untriaged
   @Override
   public void dataSpecWithEndPositionOutOfRange_readsToEnd() {}
 

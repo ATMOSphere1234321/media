@@ -281,7 +281,7 @@ public final class DecoderVideoRendererTest {
   }
 
   // TODO: Fix rendering of first frame at stream transition.
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   @Test
   public void replaceStream_whenStarted_rendersFirstFrameOfNewStream() throws Exception {
     FakeSampleStream fakeSampleStream1 =
@@ -338,7 +338,7 @@ public final class DecoderVideoRendererTest {
   }
 
   // TODO: Fix rendering of first frame at stream transition.
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   @Test
   public void replaceStream_whenNotStarted_doesNotRenderFirstFrameOfNewStream() throws Exception {
     FakeSampleStream fakeSampleStream1 =

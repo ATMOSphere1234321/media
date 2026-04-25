@@ -84,21 +84,21 @@ public class MediaDataSourceAdapterContractTest extends DataSourceContractTest {
 
   @Override
   @Test
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   public void resourceNotFound() {}
 
   @Override
   @Test
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   public void resourceNotFound_transferListenerCallbacks() {}
 
   @Override
   @Test
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   public void getUri_resourceNotFound_returnsNullIfNotOpened() {}
 
   @Override
   @Test
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   public void getResponseHeaders_resourceNotFound_isEmptyWhileNotOpen() {}
 }

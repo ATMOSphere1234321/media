@@ -207,7 +207,7 @@ class PresentationStateTest {
     assertThat(state.keepContentOnReset).isFalse()
   }
 
-  @Ignore("Internal ref: b/445384212")
+  @Ignore("Internal ref: b/445384212")  // SKIP-OK: #legacy-untriaged
   @Test
   fun keepContentOnReset_toggleValue_affectsCoveringSurfaceWithShutter() {
     val player = TestSimpleBasePlayer(playbackState = Player.STATE_IDLE)

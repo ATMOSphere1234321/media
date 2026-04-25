@@ -508,7 +508,7 @@ public final class SequenceExportTest {
   }
 
   // TODO: b/369154363 - Enable test after shouldTranscode inconsistency is resolved.
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   @Test
   public void transmuxAudio_gapItem_throws() throws Exception {
     Transformer transformer = new TestTransformerBuilder(context).build();

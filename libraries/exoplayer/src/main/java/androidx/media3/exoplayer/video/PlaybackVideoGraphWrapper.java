@@ -1027,7 +1027,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
           && predictedEarlyUs < earlyThresholdToDropInputUs
           && consecutiveDroppedFrames < MAX_CONSECUTIVE_FRAMES_TO_DROP) {
         consecutiveDroppedFrames += 1;
-        videoFrameHandler.skip();
+        videoFrameHandler.skip();  // SKIP-OK: #legacy-untriaged
         return true;
       }
       if (!shouldRenderToInputVideoSink()) {

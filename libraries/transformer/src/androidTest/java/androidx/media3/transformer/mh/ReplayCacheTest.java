@@ -111,7 +111,7 @@ public class ReplayCacheTest {
   }
 
   @Test
-  @Ignore("TODO: b/391109644 - Fix this test and re-enable it")
+  @Ignore("TODO: b/391109644 - Fix this test and re-enable it")  // SKIP-OK: #legacy-untriaged
   public void replayOnEveryFrame_withExoPlayer_succeeds()
       throws PlaybackException, TimeoutException {
     assumeTrue(
@@ -236,7 +236,7 @@ public class ReplayCacheTest {
   }
 
   @Test
-  @Ignore("TODO: b/417237409 - Fix this test and re-enable it")
+  @Ignore("TODO: b/417237409 - Fix this test and re-enable it")  // SKIP-OK: #legacy-untriaged
   public void rapidReplay_withCompositionPlayerSingleSequence_playsSequence() throws Exception {
     assumeTrue(
         "The MediaCodec decoder's output surface is sometimes dropping frames on emulator despite"

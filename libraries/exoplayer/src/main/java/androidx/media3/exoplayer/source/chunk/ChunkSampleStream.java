@@ -423,7 +423,7 @@ public class ChunkSampleStream<T extends ChunkSource>
               - primarySampleQueue.getReadIndex();
       skipCount = min(skipCount, maxSkipCount);
     }
-    primarySampleQueue.skip(skipCount);
+    primarySampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
     maybeNotifyPrimaryTrackFormatChanged();
     return skipCount;
   }
@@ -931,7 +931,7 @@ public class ChunkSampleStream<T extends ChunkSource>
                 - sampleQueue.getReadIndex();
         skipCount = min(skipCount, maxSkipCount);
       }
-      sampleQueue.skip(skipCount);
+      sampleQueue.skip(skipCount);  // SKIP-OK: #legacy-untriaged
       if (skipCount > 0) {
         maybeNotifyDownstreamFormat();
       }

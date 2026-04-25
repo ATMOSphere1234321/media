@@ -41,7 +41,7 @@ public class ExoPlayerScrubbingModeContractTest extends ScrubbingModeContractTes
   }
 
   @Test
-  @Ignore("Re-enable once b/439575600 is fixed.")
+  @Ignore("Re-enable once b/439575600 is fixed.")  // SKIP-OK: #legacy-untriaged
   @Override
   public void
       disableScrubbing_audioFocusLostWhileScrubbingWhenPreviouslyPlaying_playsWithGrantedAudioFocus() {}

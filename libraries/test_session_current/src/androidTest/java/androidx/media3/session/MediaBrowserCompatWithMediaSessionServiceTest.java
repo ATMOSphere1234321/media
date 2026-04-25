@@ -151,7 +151,7 @@ public class MediaBrowserCompatWithMediaSessionServiceTest {
     assertThat(connectionCallback.failedLatch.getCount()).isNotEqualTo(0);
   }
 
-  @Ignore
+  @Ignore  // SKIP-OK: #legacy-untriaged
   @Test
   public void connect_rejected() throws InterruptedException {
     // TODO: Connect the browser to the session service whose onConnect() returns null.

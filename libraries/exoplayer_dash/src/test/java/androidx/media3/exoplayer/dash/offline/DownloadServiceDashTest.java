@@ -157,7 +157,7 @@ public class DownloadServiceDashTest {
     testThread.release();
   }
 
-  @Ignore("Internal ref: b/78877092")
+  @Ignore("Internal ref: b/78877092")  // SKIP-OK: #legacy-untriaged
   @Test
   public void multipleDownloadRequest() throws Throwable {
     downloadKeys(fakeStreamKey1);
@@ -168,7 +168,7 @@ public class DownloadServiceDashTest {
     assertCachedData(cache, fakeDataSet);
   }
 
-  @Ignore("Internal ref: b/78877092")
+  @Ignore("Internal ref: b/78877092")  // SKIP-OK: #legacy-untriaged
   @Test
   public void removeAction() throws Throwable {
     downloadKeys(fakeStreamKey1, fakeStreamKey2);
@@ -182,7 +182,7 @@ public class DownloadServiceDashTest {
     assertCacheEmpty(cache);
   }
 
-  @Ignore("Internal ref: b/78877092")
+  @Ignore("Internal ref: b/78877092")  // SKIP-OK: #legacy-untriaged
   @Test
   public void removeBeforeDownloadComplete() throws Throwable {
     pauseDownloadCondition = new ConditionVariable();
