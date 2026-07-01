@@ -2,8 +2,6 @@
 
 ### Unreleased changes
 
-<<<<<<< HEAD
-=======
 *   Common library:
 *   ExoPlayer:
     *   Mark tracks with a well-formed but unrecognized codec profile or level
@@ -305,7 +303,6 @@ This release includes the following changes since
 This release includes the following changes since
 [1.9.0 release](#190-2025-12-17):
 
->>>>>>> 5be3cd8df2 (Extend logic to get max notification icon size to API<31)
 *   Common Library:
     *   Add `PlayerTransferState`, which facilitates transferring the playback
         state across `Player` instances.

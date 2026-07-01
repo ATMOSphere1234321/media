@@ -726,20 +726,8 @@ public class DefaultMediaNotificationProviderTest {
   public void createNotification_withCustomButtons_showsCustomButtonsWhereApplicable() {
     DefaultActionFactory defaultActionFactory =
         new DefaultActionFactory(Robolectric.setupService(TestService.class));
-    List<CommandButton> filteredMediaButtonPreferences = new ArrayList<>();
     DefaultMediaNotificationProvider defaultMediaNotificationProvider =
-        new DefaultMediaNotificationProvider(ApplicationProvider.getApplicationContext()) {
-          @Override
-          protected ImmutableList<CommandButton> getMediaButtons(
-              MediaSession session,
-              Commands playerCommands,
-              ImmutableList<CommandButton> mediaButtonPreferences,
-              boolean showPauseButton) {
-            filteredMediaButtonPreferences.addAll(mediaButtonPreferences);
-            return super.getMediaButtons(
-                session, playerCommands, mediaButtonPreferences, showPauseButton);
-          }
-        };
+        new DefaultMediaNotificationProvider(ApplicationProvider.getApplicationContext());
     MediaSession mediaSession =
         new MediaSession.Builder(
                 ApplicationProvider.getApplicationContext(),
@@ -764,25 +752,19 @@ public class DefaultMediaNotificationProviderTest {
             .setPlayerCommand(Player.COMMAND_PLAY_PAUSE)
             .build();
 
-    defaultMediaNotificationProvider.createNotification(
-        mediaSession,
-        /* mediaButtonPreferences= */ ImmutableList.of(button1, button2, button3),
-        defaultActionFactory,
-        notification -> {
-          /* Do nothing. */
-        });
-
-<<<<<<< HEAD
-    assertThat(filteredMediaButtonPreferences).containsExactly(button2);
-    mediaSession.getPlayer().release();
+    MediaNotification mediaNotification =
+        defaultMediaNotificationProvider.createNotification(
+            mediaSession,
+            /* mediaButtonPreferences= */ ImmutableList.of(button1, button2, button3),
+            defaultActionFactory,
+            notification -> {});
     mediaSession.release();
-=======
+
     assertThat(mediaNotification.notification.actions).hasLength(3);
     assertThat(mediaNotification.notification.actions[0].title.toString()).isEqualTo("button2");
     assertThat(mediaNotification.notification.actions[1].title.toString())
         .isEqualTo(context.getString(R.string.media3_controls_play_description));
     assertThat(mediaNotification.notification.actions[2].title.toString()).isEqualTo("button1");
->>>>>>> 8b334e45a9 (Use standard commands in custom layout conversion)
   }
 
   @Test
